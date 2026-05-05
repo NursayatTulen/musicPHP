@@ -13,6 +13,5 @@ Dockerfile
 .dockerignore
 .gitignore
 docker-compose.yml
-php.ini
 *.log
 .phpunit.result.cache
