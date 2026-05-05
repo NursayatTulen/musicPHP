@@ -53,5 +53,5 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 # Expose port
 EXPOSE 80
 
-# Entrypoint to run migrations, link storage and start Apache
-CMD php artisan migrate --force && php artisan storage:link && apache2-foreground
+# Entrypoint to run migrations, seed, link storage and start Apache
+CMD php artisan migrate --force && php artisan db:seed --force && php artisan storage:link && apache2-foreground

@@ -13,37 +13,47 @@ class DatabaseSeeder extends Seeder
    
     public function run(): void
     {
-       
         $this->call(RolePermissionSeeder::class);
 
-      
-        $superAdmin = User::factory()->create([
-            'name' => 'Studio Master',
-            'email' => 'master@musichub.kz',
-            'password' => bcrypt('password'),
-        ]);
-        $superAdmin->assignRole('super-admin');
+        // Super Admin
+        $superAdmin = User::updateOrCreate(
+            ['email' => 'master@musichub.kz'],
+            [
+                'name' => 'Studio Master',
+                'password' => bcrypt('password'),
+            ]
+        );
+        $superAdmin->syncRoles(['super-admin']);
 
-        $admin = User::factory()->create([
-            'name' => 'Admin Artist',
-            'email' => 'admin@musichub.kz',
-            'password' => bcrypt('password'),
-        ]);
-        $admin->assignRole('admin');
+        // Admin
+        $admin = User::updateOrCreate(
+            ['email' => 'admin@musichub.kz'],
+            [
+                'name' => 'Admin Artist',
+                'password' => bcrypt('password'),
+            ]
+        );
+        $admin->syncRoles(['admin']);
 
-        $moderator = User::factory()->create([
-            'name' => 'Studio Moderator',
-            'email' => 'moderator@musichub.kz',
-            'password' => bcrypt('password'),
-        ]);
-        $moderator->assignRole('moderator');
+        // Moderator
+        $moderator = User::updateOrCreate(
+            ['email' => 'moderator@musichub.kz'],
+            [
+                'name' => 'Studio Moderator',
+                'password' => bcrypt('password'),
+            ]
+        );
+        $moderator->syncRoles(['moderator']);
 
-        $user = User::factory()->create([
-            'name' => 'Music Artist',
-            'email' => 'artist@musichub.kz',
-            'password' => bcrypt('password'),
-        ]);
-        $user->assignRole('user');
+        // Music Artist
+        $user = User::updateOrCreate(
+            ['email' => 'artist@musichub.kz'],
+            [
+                'name' => 'Music Artist',
+                'password' => bcrypt('password'),
+            ]
+        );
+        $user->syncRoles(['user']);
     }
 }
 

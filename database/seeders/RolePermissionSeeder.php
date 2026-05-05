@@ -14,38 +14,33 @@ class RolePermissionSeeder extends Seeder
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
       
-        Permission::create(['name' => 'create music-tracks']);
-        Permission::create(['name' => 'edit music-tracks']);
-        Permission::create(['name' => 'delete music-tracks']);
-        Permission::create(['name' => 'publish music-tracks']);
-        Permission::create(['name' => 'view music-tracks']);
+        Permission::firstOrCreate(['name' => 'create music-tracks']);
+        Permission::firstOrCreate(['name' => 'edit music-tracks']);
+        Permission::firstOrCreate(['name' => 'delete music-tracks']);
+        Permission::firstOrCreate(['name' => 'publish music-tracks']);
+        Permission::firstOrCreate(['name' => 'view music-tracks']);
 
-        Permission::create(['name' => 'create music-news']);
-        Permission::create(['name' => 'edit music-news']);
-        Permission::create(['name' => 'delete music-news']);
-        Permission::create(['name' => 'publish music-news']);
-        Permission::create(['name' => 'view music-news']);
+        Permission::firstOrCreate(['name' => 'create music-news']);
+        Permission::firstOrCreate(['name' => 'edit music-news']);
+        Permission::firstOrCreate(['name' => 'delete music-news']);
+        Permission::firstOrCreate(['name' => 'publish music-news']);
+        Permission::firstOrCreate(['name' => 'view music-news']);
 
-        Permission::create(['name' => 'create records']);
-        Permission::create(['name' => 'edit records']);
-        Permission::create(['name' => 'delete records']);
-        Permission::create(['name' => 'view records']);
+        Permission::firstOrCreate(['name' => 'create records']);
+        Permission::firstOrCreate(['name' => 'edit records']);
+        Permission::firstOrCreate(['name' => 'delete records']);
+        Permission::firstOrCreate(['name' => 'view records']);
 
-       
-        Permission::create(['name' => 'manage users']);
-        Permission::create(['name' => 'manage roles']);
-        Permission::create(['name' => 'view analytics']);
-        Permission::create(['name' => 'manage settings']);
+        Permission::firstOrCreate(['name' => 'manage users']);
+        Permission::firstOrCreate(['name' => 'manage roles']);
+        Permission::firstOrCreate(['name' => 'view analytics']);
+        Permission::firstOrCreate(['name' => 'manage settings']);
 
-        
+        $superAdmin = Role::firstOrCreate(['name' => 'super-admin']);
+        $superAdmin->syncPermissions(Permission::all());
 
-      
-        $superAdmin = Role::create(['name' => 'super-admin']);
-        $superAdmin->givePermissionTo(Permission::all());
-
-    
-        $admin = Role::create(['name' => 'admin']);
-        $admin->givePermissionTo([
+        $admin = Role::firstOrCreate(['name' => 'admin']);
+        $admin->syncPermissions([
             'create music-tracks',
             'edit music-tracks',
             'delete music-tracks',
@@ -63,8 +58,8 @@ class RolePermissionSeeder extends Seeder
             'view analytics',
         ]);
 
-        $moderator = Role::create(['name' => 'moderator']);
-        $moderator->givePermissionTo([
+        $moderator = Role::firstOrCreate(['name' => 'moderator']);
+        $moderator->syncPermissions([
             'create music-tracks',
             'edit music-tracks',
             'publish music-tracks',
@@ -78,9 +73,8 @@ class RolePermissionSeeder extends Seeder
             'view records',
         ]);
 
-   
-        $user = Role::create(['name' => 'user']);
-        $user->givePermissionTo([
+        $user = Role::firstOrCreate(['name' => 'user']);
+        $user->syncPermissions([
             'view music-tracks',
             'view music-news',
             'create records',
