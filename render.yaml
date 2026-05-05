@@ -1,0 +1,46 @@
+services:
+  - type: web
+    name: music-hub-app
+    env: docker
+    plan: free
+    region: singapore
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_URL
+        sync: false
+        placeholder: "https://your-app-name.onrender.com"
+      
+      # Database (Supabase)
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        placeholder: "aws-1-ap-south-1.pooler.supabase.com"
+      - key: DB_PORT
+        value: "6543"
+      - key: DB_DATABASE
+        value: postgres
+      - key: DB_USERNAME
+        placeholder: "postgres.your-id"
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_SSLMODE
+        value: require
+
+      # Session & Cache
+      - key: SESSION_DRIVER
+        value: cookie
+      - key: CACHE_STORE
+        value: database
+      
+      # Logging
+      - key: LOG_CHANNEL
+        value: errorlog
+
+      # Upload Limits (Handled in php.ini, but good to have here)
+      - key: FILESYSTEM_DISK
+        value: public
