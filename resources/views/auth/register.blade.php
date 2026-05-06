@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Тіркелу — Music Hub')
+@section('title', __('Register') . ' — Music Hub')
 
 @section('content')
 <div class="login-architecture fade-in">
@@ -10,22 +10,22 @@
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(217, 70, 239, 0.4));"></div>
             <div class="visual-content">
                 <i class="fas fa-microphone-lines fa-bounce" style="--fa-animation-duration: 3s;"></i>
-                <h2 class="text-gradient">Join the Hub</h2>
+                <h2 class="text-gradient">{{ __('Join the Hub') }}</h2>
                 <p>{{ __('Become part of the most advanced music community in Kazakhstan.') }}</p>
             </div>
         </div>
         
         <div class="login-form-side">
             <div class="form-header">
-                <h3 class="text-gradient" style="font-size: 2rem; margin-bottom: 0.5rem;">{{ __('Артист Тіркеу') }}</h3>
+                <h3 class="text-gradient" style="font-size: 2rem; margin-bottom: 0.5rem;">{{ __('Artist Registration') }}</h3>
                 <p style="color: var(--text-secondary); margin-bottom: 2rem;">{{ __('Create your creative profile today.') }}</p>
             </div>
 
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-group-v2">
-                    <label><i class="fas fa-user"></i> Аты-жөні</label>
-                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Your Full Name" required autofocus>
+                    <label><i class="fas fa-user"></i> {{ __('Name') }}</label>
+                    <input type="text" name="name" value="{{ old('name') }}" placeholder="{{ __('Your Full Name') }}" required autofocus>
                     @error('name')
                         <span class="error-text">{{ $message }}</span>
                     @enderror
@@ -41,11 +41,11 @@
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div class="form-group-v2">
-                        <label><i class="fas fa-lock"></i> Құпия сөз</label>
+                        <label><i class="fas fa-lock"></i> {{ __('Password') }}</label>
                         <input type="password" name="password" placeholder="••••••••" required>
                     </div>
                     <div class="form-group-v2">
-                        <label><i class="fas fa-circle-check"></i> Растау</label>
+                        <label><i class="fas fa-circle-check"></i> {{ __('Confirm Password') }}</label>
                         <input type="password" name="password_confirmation" placeholder="••••••••" required>
                     </div>
                 </div>
@@ -54,13 +54,13 @@
                 @enderror
 
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">
-                    <span>{{ __('Тіркелуді бастау') }}</span>
+                    <span>{{ __('Start Registration') }}</span>
                     <i class="fas fa-user-plus"></i>
                 </button>
             </form>
 
             <div class="auth-switch">
-                {{ __("Already have an account?") }} <a href="{{ route('login') }}">{{ __('Кіру') }}</a>
+                {{ __("Already have an account?") }} <a href="{{ route('login') }}">{{ __('Login') }}</a>
             </div>
         </div>
     </div>

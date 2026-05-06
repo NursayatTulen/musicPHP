@@ -61,7 +61,7 @@
             <p style="color: var(--text-secondary); font-size: 1rem;">{{ __('Your personal creative workstation is ready.') }}</p>
         </div>
         <div class="glass-panel" style="padding: 12px 24px; border-radius: 16px;">
-            <div style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Current Session</div>
+            <div style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">{{ __('Current Session') }}</div>
             <div style="font-weight: 700; color: var(--primary); font-size: 1.2rem;">02:45:12</div>
         </div>
     </div>

@@ -20,25 +20,25 @@
         <div class="studio-layout">
             <aside class="studio-sidebar">
                 <div class="studio-nav-group">
-                    <div class="group-label">Workspace</div>
-                    <a href="#" class="studio-nav-link active"><i class="fas fa-music"></i> Жаңа трек қосу</a>
-                    <a href="#" class="studio-nav-link"><i class="fas fa-microphone-alt"></i> Дауыс жазу</a>
-                    <a href="#" class="studio-nav-link"><i class="fas fa-sliders"></i> Микшер</a>
+                    <div class="group-label">{{ __('Workspace') }}</div>
+                    <a href="#" class="studio-nav-link active"><i class="fas fa-music"></i> {{ __('Add New Track') }}</a>
+                    <a href="#" class="studio-nav-link"><i class="fas fa-microphone-alt"></i> {{ __('Voice Recording') }}</a>
+                    <a href="#" class="studio-nav-link"><i class="fas fa-sliders"></i> {{ __('Mixer') }}</a>
                 </div>
 
                 <div class="studio-nav-group">
-                    <div class="group-label">Navigation</div>
-                    <a href="{{ route('dashboard') }}" class="studio-nav-link"><i class="fas fa-th-large"></i> Dashboard</a>
-                    <a href="#" class="studio-nav-link"><i class="fas fa-users"></i> Артистер</a>
-                    <a href="#" class="studio-nav-link"><i class="fas fa-broadcast-tower"></i> Жаңалықтар</a>
+                    <div class="group-label">{{ __('Navigation') }}</div>
+                    <a href="{{ route('dashboard') }}" class="studio-nav-link"><i class="fas fa-th-large"></i> {{ __('Dashboard') }}</a>
+                    <a href="#" class="studio-nav-link"><i class="fas fa-users"></i> {{ __('Artists') }}</a>
+                    <a href="#" class="studio-nav-link"><i class="fas fa-broadcast-tower"></i> {{ __('News') }}</a>
                 </div>
                 
                 <div class="studio-status-panel">
                     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
                         <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 10px #22c55e;"></div>
-                        <span style="font-size: 0.75rem; font-weight: 700;">System Online</span>
+                        <span style="font-size: 0.75rem; font-weight: 700;">{{ __('System Online') }}</span>
                     </div>
-                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Latency: 12ms</div>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary);">{{ __('Latency') }}: 12ms</div>
                 </div>
             </aside>
 
@@ -46,7 +46,7 @@
                 <div class="upload-zone">
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, var(--primary-glow) 0%, transparent 70%); opacity: 0.1;"></div>
                     <i class="fas fa-wave-square fa-3x" style="color: var(--accent); margin-bottom: 20px; filter: drop-shadow(0 0 15px var(--accent-glow));"></i>
-                    <h2 class="text-gradient" style="margin-bottom: 10px; font-size: 1.5rem;">Upload Your Masterpiece</h2>
+                    <h2 class="text-gradient" style="margin-bottom: 10px; font-size: 1.5rem;">{{ __('Upload Your Masterpiece') }}</h2>
                     <p style="color: var(--text-secondary); margin-bottom: 30px;">{{ __('MP3, WAV, M4A up to 10MB') }}</p>
 
                     <form action="{{ route('upload.store') }}" method="POST" enctype="multipart/form-data" style="max-width: 500px; margin: 0 auto;">
@@ -54,19 +54,19 @@
                         <div style="position: relative; margin-bottom: 20px;">
                             <input type="file" name="file" id="file" class="custom-file-input" accept=".mp3,.wav,.m4a,image/*" required>
                             <label for="file" class="file-label">
-                                <i class="fas fa-file-audio"></i> Choose Audio File
+                                <i class="fas fa-file-audio"></i> {{ __('Choose Audio File') }}
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 16px;">
-                            <i class="fas fa-upload"></i> ЖҮКТЕУДІ БАСТАУ
+                            <i class="fas fa-upload"></i> {{ __('START UPLOAD') }}
                         </button>
                     </form>
                 </div>
 
                 <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
-                    <h3 style="font-weight: 900; letter-spacing: 1px; text-transform: uppercase; font-size: 1rem;">Менің коллекциям</h3>
+                    <h3 style="font-weight: 900; letter-spacing: 1px; text-transform: uppercase; font-size: 1rem;">{{ __('My Collection') }}</h3>
                     <div style="flex: 1; height: 1px; background: var(--border);"></div>
-                    <div style="font-size: 0.8rem; color: var(--text-secondary);">{{ count($files) }} Items</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">{{ count($files) }} {{ __('Items') }}</div>
                 </div>
 
                 <div class="track-grid">

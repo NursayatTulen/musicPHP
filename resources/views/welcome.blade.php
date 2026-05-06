@@ -46,7 +46,7 @@
     <div class="hero-grid">
         <div>
             <h1 class="hero-title text-gradient">
-                Sound of <br>Future.
+                {{ __('Sound of Future.') }}
             </h1>
             <p style="font-size: var(--font-lg); color: var(--text-secondary); margin-bottom: var(--space-lg); max-width: 500px; line-height: 1.6;">
                 {{ __('Music Hub Kazakhstan is the ultimate ecosystem for artists, producers, and sound engineers to collaborate, evolve, and conquer the global charts.') }}
@@ -55,14 +55,14 @@
             <div style="display: flex; gap: var(--space-md);">
                 @auth
                     <a href="{{ route('dashboard') }}" class="btn btn-primary">
-                        <i class="fas fa-record-vinyl"></i> Enter Studio
+                        <i class="fas fa-record-vinyl"></i> {{ __('Enter Studio') }}
                     </a>
                 @else
                     <a href="{{ route('register') }}" class="btn btn-primary">
-                        Join the Hub
+                        {{ __('Join the Hub') }}
                     </a>
                     <a href="{{ route('login') }}" class="btn btn-secondary">
-                        Sign In
+                        {{ __('Sign In') }}
                     </a>
                 @endauth
             </div>
@@ -76,8 +76,8 @@
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 10px #22c55e;"></div>
                     <div>
-                        <div style="font-weight: 800; font-size: 1.2rem;">Live Now</div>
-                        <div style="font-size: 0.8rem; color: var(--text-secondary);">42 Producers Online</div>
+                        <div style="font-weight: 800; font-size: 1.2rem;">{{ __('Live Now') }}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">42 {{ __('Producers Online') }}</div>
                     </div>
                 </div>
             </div>

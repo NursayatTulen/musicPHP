@@ -36,23 +36,23 @@
                             </span>
                         @endforeach
                         @if($artist->roles->isEmpty())
-                            <span class="badge badge-green" style="font-size: 0.6rem;">Performer</span>
+                            <span class="badge badge-green" style="font-size: 0.6rem;">{{ __('Performer') }}</span>
                         @endif
                     </div>
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 15px;">
                         <div>
-                            <div style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase;">Tracks</div>
+                            <div style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase;">{{ __('Tracks') }}</div>
                             <div style="font-weight: 800;">12</div>
                         </div>
                         <div>
-                            <div style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase;">Rating</div>
+                            <div style="font-size: 0.65rem; color: var(--text-secondary); text-transform: uppercase;">{{ __('Rating') }}</div>
                             <div style="font-weight: 800;">4.9</div>
                         </div>
                     </div>
 
                     <a href="{{ route('artists.show', $artist->id) }}" class="btn btn-secondary" style="width: 100%; justify-content: center; padding: 12px;">
-                        View Portfolio
+                        {{ __('View Portfolio') }}
                     </a>
                 </div>
             </div>

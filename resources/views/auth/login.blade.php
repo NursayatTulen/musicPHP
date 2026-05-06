@@ -10,7 +10,7 @@
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(217, 70, 239, 0.4));"></div>
             <div class="visual-content">
                 <i class="fas fa-compact-disc fa-spin-slow"></i>
-                <h2 class="text-gradient">Music Hub</h2>
+                <h2 class="text-gradient">{{ __('Join the Hub') }}</h2>
                 <p>{{ __('The ultimate space for sound creators.') }}</p>
             </div>
         </div>

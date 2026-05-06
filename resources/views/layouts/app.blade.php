@@ -546,7 +546,7 @@
 
             @hasanyrole('super-admin|admin|moderator')
             <li><a href="{{ route('upload.index') }}" class="nav-link {{ request()->routeIs('upload.index') ? 'active' : '' }}">
-                <i class="fas fa-upload"></i> <span>Studio</span>
+                <i class="fas fa-upload"></i> <span>{{ __('Studio') }}</span>
             </a></li>
             @endhasanyrole
 

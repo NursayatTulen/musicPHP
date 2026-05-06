@@ -29,7 +29,7 @@
                     <div style="flex: 1;">
                         <h3 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 5px;">{{ $track->title }}</h3>
                         <div style="display: flex; align-items: center; gap: 10px;">
-                            <span class="badge badge-blue" style="font-size: 0.6rem;">Mastered</span>
+                            <span class="badge badge-blue" style="font-size: 0.6rem;">{{ __('Mastered') }}</span>
                             <span style="font-size: 0.75rem; color: var(--text-secondary);">4:15 • 320kbps</span>
                         </div>
                     </div>

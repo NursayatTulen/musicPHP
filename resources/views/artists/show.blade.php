@@ -27,15 +27,15 @@
             </div>
             
             <div class="profile-actions">
-                <button class="btn btn-primary"><i class="fas fa-paper-plane"></i> Message</button>
-                <button class="btn btn-secondary"><i class="fas fa-plus"></i> Follow</button>
+                <button class="btn btn-primary"><i class="fas fa-paper-plane"></i> {{ __('Message') }}</button>
+                <button class="btn btn-secondary"><i class="fas fa-plus"></i> {{ __('Follow') }}</button>
             </div>
         </div>
     </div>
 
     <div class="profile-main-grid">
         <div class="card">
-            <h3 style="margin-bottom: 30px;"><i class="fas fa-play-circle" style="color: var(--primary);"></i> Featured Tracks</h3>
+            <h3 style="margin-bottom: 30px;"><i class="fas fa-play-circle" style="color: var(--primary);"></i> {{ __('Featured Tracks') }}</h3>
             <div style="display: flex; flex-direction: column; gap: 15px;">
                 @for($i=1; $i<=3; $i++)
                 <div class="track-row">
@@ -56,18 +56,18 @@
         </div>
 
         <div class="card">
-            <h3 style="margin-bottom: 20px;">Stats</h3>
+            <h3 style="margin-bottom: 20px;">{{ __('Stats') }}</h3>
             <div style="display: grid; gap: 15px;">
                 <div class="glass-panel stat-row">
-                    <span style="color: var(--text-secondary);">Monthly Listeners</span>
+                    <span style="color: var(--text-secondary);">{{ __('Monthly Listeners') }}</span>
                     <span style="font-weight: 800;">12,450</span>
                 </div>
                 <div class="glass-panel stat-row">
-                    <span style="color: var(--text-secondary);">Followers</span>
+                    <span style="color: var(--text-secondary);">{{ __('Followers') }}</span>
                     <span style="font-weight: 800;">3,820</span>
                 </div>
                 <div class="glass-panel stat-row">
-                    <span style="color: var(--text-secondary);">Total Streams</span>
+                    <span style="color: var(--text-secondary);">{{ __('Total Streams') }}</span>
                     <span style="font-weight: 800;">450K</span>
                 </div>
             </div>
